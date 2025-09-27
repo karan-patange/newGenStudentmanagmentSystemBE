@@ -4,6 +4,12 @@ import com.example.StudentManagement.entity.StudentsRegistration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface StudentRegistrationRepository extends JpaRepository<StudentsRegistration,Long> {
+
+List <StudentsRegistration> findByGenderIgnoreCase(String gender);
+
+
 }

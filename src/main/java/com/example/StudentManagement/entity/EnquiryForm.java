@@ -15,11 +15,6 @@ public class EnquiryForm {
     public String StudentName ;
     public String MobileNumber ;
     public String Email;
-    public String Qualification ;
-    public String PassingYear ;
-    public String CourseName;
-    public String CourseMode ;
-    public String Address ;
 
     public Long getId() {
         return Id;
@@ -53,46 +48,6 @@ public class EnquiryForm {
         Email = email;
     }
 
-    public String getQualification() {
-        return Qualification;
-    }
-
-    public void setQualification(String qualification) {
-        Qualification = qualification;
-    }
-
-    public String getPassingYear() {
-        return PassingYear;
-    }
-
-    public void setPassingYear(String passingYear) {
-        PassingYear = passingYear;
-    }
-
-    public String getCourseName() {
-        return CourseName;
-    }
-
-    public void setCourseName(String courseName) {
-        CourseName = courseName;
-    }
-
-    public String getCourseMode() {
-        return CourseMode;
-    }
-
-    public void setCourseMode(String courseMode) {
-        CourseMode = courseMode;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }
-
     @Override
     public String toString() {
         return "EnquiryForm{" +
@@ -100,11 +55,6 @@ public class EnquiryForm {
                 ", StudentName='" + StudentName + '\'' +
                 ", MobileNumber='" + MobileNumber + '\'' +
                 ", Email='" + Email + '\'' +
-                ", Qualification='" + Qualification + '\'' +
-                ", PassingYear='" + PassingYear + '\'' +
-                ", CourseName='" + CourseName + '\'' +
-                ", CourseMode='" + CourseMode + '\'' +
-                ", Address='" + Address + '\'' +
                 '}';
     }
 }

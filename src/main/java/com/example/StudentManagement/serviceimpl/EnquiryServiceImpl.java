@@ -13,6 +13,9 @@ public class EnquiryServiceImpl implements EnquiryService {
 
     @Override
     public EnquiryForm newEnquier(EnquiryForm enquiryForm) {
+
+        System.out.println("enquiry saved in dayabase.....!!");
+
         return enquiryRepository.save(enquiryForm);
     }
 }

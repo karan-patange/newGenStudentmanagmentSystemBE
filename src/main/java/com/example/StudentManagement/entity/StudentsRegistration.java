@@ -3,9 +3,11 @@ package com.example.StudentManagement.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -36,6 +38,20 @@ public class StudentsRegistration {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fkAddress") // StudentsRegistration owns the FK column
     private StudentAddress studentAddress;
+
+
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<StudentSelectedCourses> cources;
+
+
+    public List<StudentSelectedCourses> getCources() {
+        return cources;
+    }
+
+    public void setCources(List<StudentSelectedCourses> cources) {
+        this.cources = cources;
+    }
 
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
@@ -130,6 +146,7 @@ public class StudentsRegistration {
                 ", dateOfBirth=" + dateOfBirth +
                 ", feesRecords=" + feesRecords +
                 ", studentAddress=" + studentAddress +
+                ", cources=" + cources +
                 '}';
     }
 }
