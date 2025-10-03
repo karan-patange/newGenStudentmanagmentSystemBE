@@ -45,4 +45,17 @@ public class EmailServiceImpl implements EmailService {
         message.setText(body);
         mailSender.send(message);
     }
+
+    @Override
+    @Async
+    public void sendOtp(String to, String subject, String body) {
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(fromEmail);
+        message.setTo(to);
+        message.setSubject(subject);
+        message.setText(body);
+        mailSender.send(message);
+
+    }
 }

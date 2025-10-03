@@ -6,4 +6,6 @@ public interface EmailService {
 
      void sendCustomeEmail(String to, String subject, String body);
 
+     void sendOtp (String to, String subject, String body);
+
 }
